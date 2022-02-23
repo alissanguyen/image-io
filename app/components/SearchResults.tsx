@@ -1,7 +1,6 @@
 import * as React from "react";
 import { IUnsplashPhoto } from "~/types/unsplash";
 import SearchResult from "./SearchResult";
-import YTLinks from "./YTLinks";
 
 interface Props {
   results: IUnsplashPhoto[];
@@ -14,15 +13,9 @@ const SearchResults: React.FC<Props> = (props) => {
     ));
   };
 
-  const getYouTubeLinks = () => {
-    if (props.results.length > 0) {
-      return <YTLinks />;
-    }
-  };
   return (
-    <div id="search-results-wrapper">
-      {getYouTubeLinks()}
-      <div id="search-results">{getResults()}</div>
+    <div className="search-results-wrapper m-auto relative z-[2] max-w-[1000px] mt-36">
+      <div className="search-results">{getResults()}</div>
     </div>
   );
 };

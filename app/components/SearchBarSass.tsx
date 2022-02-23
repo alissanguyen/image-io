@@ -32,11 +32,14 @@ const SearchBarSass: React.FC<Props> = ({}) => {
     });
   };
   return (
-    <div id="search-bar-sass">
+    <div className="search-bar-sass flex mt-3">
       <div id="search-bar-sass-icon" className={getIconWrapperClasses()}>
         <i key={NumberUtility.random(1, 10000)} className={getIconClasses()} />
       </div>
-      <h1 key={NumberUtility.random(1, 10000)} id="search-bar-sass-statement">
+      <h1
+        key={NumberUtility.random(1, 10000)}
+        className="search-bar-sass-statement text-white h-[18px]"
+      >
         {sass.statement}
       </h1>
     </div>

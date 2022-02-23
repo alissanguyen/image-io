@@ -64,148 +64,71 @@ body a {
   padding: 0px;
 }
 
-#app {
-  overflow: hidden;
-}
-#app #app-background {
-  height: 100vh;
-  left: 0px;
-  opacity: 0.4;
-  position: fixed;
-  top: 0px;
-  width: 100vw;
-  z-index: 1;
-}
-#app #app-background.searching #app-background-image {
+.app-background.searching .app-background-image {
   transform: scale(1.25);
 }
-#app #app-background.searching #app-background-image-filter {
+.app-background.searching .app-background-image-filter {
   opacity: 1;
 }
-#app #app-background #app-background-image,
-#app #app-background #app-background-image-filter {
-  height: 100%;
-  width: 100%;
-}
-#app #app-background #app-background-image {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+
+.app-background-image {
   transition: transform 250ms;
-  z-index: 1;
 }
-#app #app-background #app-background-image-filter {
+.app-background-image-filter {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
-  left: 0px;
   opacity: 0;
-  position: absolute;
-  top: 0px;
   transition: opacity 250ms;
-  z-index: 2;
 }
-#app #search-bar-aligner {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  pointer-events: none;
-  position: fixed;
+.search-bar-aligner {
   transition: height 250ms;
-  width: 100%;
-  z-index: 3;
 }
-#app
-  #search-bar-aligner.focused
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-logo:after,
-#app
-  #search-bar-aligner.querying
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-logo:after,
-#app
-  #search-bar-aligner.searching
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-logo:after {
+
+.search-bar-aligner.focused #search-bar-logo:after,
+.search-bar-aligner.querying #search-bar-logo:after,
+.search-bar-aligner.searching #search-bar-logo:after {
   background-color: rgba(255, 255, 255, 0.25);
   height: 20px;
   right: 0px;
   width: 1px;
 }
-#app
-  #search-bar-aligner.focused
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input,
-#app
-  #search-bar-aligner.querying
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input,
-#app
-  #search-bar-aligner.searching
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input {
+
+.search-bar-aligner.focused .search-bar-input,
+.search-bar-aligner.querying .search-bar-input,
+.search-bar-aligner.searching .search-bar-input {
   width: 100%;
 }
-#app
-  #search-bar-aligner.focused
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input::placeholder,
-#app
-  #search-bar-aligner.querying
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input::placeholder,
-#app
-  #search-bar-aligner.searching
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input::placeholder {
+
+.search-bar-aligner.focused .search-bar-input::placeholder,
+.search-bar-aligner.querying .search-bar-input::placeholder,
+.search-bar-aligner.searching .search-bar-input::placeholder {
   color: rgba(255, 255, 255, 0.25);
 }
-#app #search-bar-aligner.searching {
+
+.search-bar-aligner.searching {
   height: 100px;
 }
-#app #search-bar-aligner #search-bar-wrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+
+.search-bar-wrapper {
   gap: 5px;
   margin: 10px;
   width: 500px;
 }
-#app #search-bar-aligner #search-bar-wrapper #search-bar {
-  align-items: center;
+.search-bar {
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-  display: flex;
   gap: 10px;
-  justify-content: center;
   padding: 10px;
   pointer-events: all;
-  position: relative;
   width: calc(100% - 20px);
 }
-#app #search-bar-aligner #search-bar-wrapper #search-bar #search-bar-clicker {
+
+.search-bar-clicker {
   border-radius: 6px;
-  cursor: pointer;
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: 2;
 }
-#app #search-bar-aligner #search-bar-wrapper #search-bar #search-bar-logo {
+#search-bar-logo {
   color: white;
   flex-shrink: 0;
   font-size: 0.9em;
@@ -213,11 +136,8 @@ body a {
   position: relative;
   text-align: center;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-logo:after {
+
+#search-bar-logo:after {
   background-color: white;
   border-radius: 3px;
   content: "";
@@ -229,104 +149,60 @@ body a {
   transition: height 250ms, width 250ms, right 250ms, background-color 250ms;
   width: 3px;
 }
-#app #search-bar-aligner #search-bar-wrapper #search-bar #search-bar-input {
-  background-color: transparent;
-  border: none;
-  color: white;
+.search-bar-input {
   font-size: 1em;
   height: 20px;
-  outline: none;
   padding: 10px 0px;
-  text-align: left;
   transition: width 250ms;
   width: 54px;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-input::placeholder {
-  color: white;
+
+.search-bar-input::placeholder {
+  color: rgba(255, 255, 255, 0.877);
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-reset-button {
-  background-color: transparent;
-  color: #c62828 !important;
-  border: none;
+
+.search-bar-aligner .search-bar-wrapper .search-bar .search-bar-reset-button {
   border-radius: 3px;
-  cursor: pointer;
   flex-shrink: 0;
   height: 30px;
-  outline: none;
   padding: 5px;
-  position: relative;
   width: 30px;
-  z-index: 3;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-reset-button:hover,
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-reset-button:focus {
+
+.search-bar-reset-button:hover,
+.search-bar-reset-button:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar
-  #search-bar-reset-button
-  i {
+
+.search-bar-reset-button i {
   color: white;
 }
-#app #search-bar-aligner #search-bar-wrapper #search-bar-sass {
-  display: flex;
+
+.search-bar-sass {
   gap: 5px;
   padding: 0px 10px;
   pointer-events: all;
   width: calc(100% - 20px);
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar-sass
-  #search-bar-sass-icon {
+
+#search-bar-sass-icon {
   align-items: center;
   display: flex;
   height: 18px;
   justify-content: center;
   width: 18px;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar-sass
-  #search-bar-sass-icon.emoji.typing
-  i {
+
+#search-bar-sass-icon.emoji.typing i {
   animation-duration: 150ms;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar-sass
-  #search-bar-sass-icon.emoji
-  i {
+
+#search-bar-sass-icon.emoji i {
   animation: fadeInAndExpand 250ms ease-in;
   font-size: 1em;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar-sass
-  #search-bar-sass-icon
-  i {
+
+#search-bar-sass-icon i {
   color: white;
   font-size: 0.75em;
   height: 18px;
@@ -334,59 +210,14 @@ body a {
   text-align: center;
   width: 18px;
 }
-#app
-  #search-bar-aligner
-  #search-bar-wrapper
-  #search-bar-sass
-  #search-bar-sass-statement {
+
+.search-bar-sass-statement {
   animation: fadeInFromLeft 250ms ease-in;
-  color: white;
-  font-size: 0.8em;
-  height: 18px;
+  font-size: 1em;
   line-height: 18px;
 }
-#app #search-results-wrapper {
-  margin: auto;
-  margin-top: 130px;
-  max-width: 1000px;
-  position: relative;
-  z-index: 2;
-}
-#app #search-results-wrapper #youtube-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0px 10px;
-  pointer-events: all;
-}
-#app #search-results-wrapper #youtube-links .youtube-link {
-  align-items: center;
-  border-radius: 3px;
-  display: flex;
-  gap: 5px;
-  padding: 5px 10px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-#app #search-results-wrapper #youtube-links .youtube-link:hover,
-#app #search-results-wrapper #youtube-links .youtube-link:focus {
-  backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-#app #search-results-wrapper #youtube-links .youtube-link i,
-#app #search-results-wrapper #youtube-links .youtube-link h1 {
-  height: 20px;
-  line-height: 20px;
-}
-#app #search-results-wrapper #youtube-links .youtube-link i {
-  color: #c62828;
-  font-size: 1em;
-}
-#app #search-results-wrapper #youtube-links .youtube-link h1 {
-  color: white;
-  font-size: 0.9em;
-}
-#app #search-results-wrapper #search-results {
+
+.search-results-wrapper .search-results {
   display: grid;
   gap: 10px;
   grid-auto-rows: 20px;
@@ -394,130 +225,74 @@ body a {
   padding: 10px;
   padding-bottom: 50px;
 }
-#app #search-results-wrapper #search-results .search-result {
+.search-results-wrapper .search-results .search-result {
   background-color: #1e1e1e;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  opacity: 0;
-  overflow: hidden;
-  position: relative;
   transform: translateY(20px);
   transition: opacity 250ms, transform 250ms;
 }
-#app #search-results-wrapper #search-results .search-result.visible {
+.search-results-wrapper .search-results .search-result.visible {
   opacity: 1;
   transform: translateY(0px);
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result.loaded:hover
-  .search-result-background {
+
+.search-result.loaded:hover .search-result-background {
   opacity: 1;
   transform: scale(1.1);
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result.loaded
-  .search-result-background {
+
+.search-result.loaded .search-result-background {
   filter: blur(0px);
   transform: scale(1);
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result.loaded
-  .search-result-info-wrapper {
+
+.search-result.loaded .search-result-info-wrapper {
   display: flex;
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result
-  .search-result-background {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.search-result-background {
   border-radius: 10px;
-  cursor: pointer;
-  display: block;
   filter: blur(3px);
-  height: 100%;
-  opacity: 0.8;
   transform: scale(1.25);
   transition: opacity 250ms, transform 250ms, backgroundImage 250ms,
     filter 250ms;
-  width: 100%;
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result
-  .search-result-info-wrapper {
-  align-items: flex-end;
+
+.search-result-info-wrapper {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
   border-radius: 10px;
-  display: none;
-  height: 100%;
-  left: 0px;
-  overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: 2;
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result
-  .search-result-info-wrapper
-  .search-result-info {
-  display: flex;
-  margin: 10px;
+
+.search-result-info {
   width: calc(100% - 20px);
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result
-  .search-result-info-wrapper
-  .search-result-info
-  .search-result-creator {
+
+.search-result-creator {
   border-radius: 3px;
-  color: white;
   font-size: 0.9em;
-  overflow: hidden;
   padding: 5px 10px;
   pointer-events: all;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
-#app
-  #search-results-wrapper
-  #search-results
-  .search-result
-  .search-result-info-wrapper
-  .search-result-info
-  .search-result-creator:hover {
+
+.search-result-creator:hover {
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.1);
 }
 @media (max-width: 1000px) {
-  #app #search-results-wrapper #search-results {
+  .search-results-wrapper .search-results {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }
 @media (max-width: 800px) {
-  #app #search-results-wrapper #search-results {
+  .search-results-wrapper .search-results {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 @media (max-width: 500px) {
-  #app #search-results-wrapper #search-results {
+  .search-results-wrapper .search-results {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }

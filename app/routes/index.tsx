@@ -17,13 +17,14 @@ export default function App() {
     [state.results]
   );
   return (
-    <div id="app">
+    <div className="app overflow-hidden">
       <div
-        id="app-background"
-        className={classNames({ searching: state.searching })}
+        className={`app-background h-screen left-0 opacity-40 fixed top-0 w-screen z-[1] ${classNames(
+          { searching: state.searching }
+        )}`}
       >
-        <div id="app-background-image" style={getBackgroundStyles()} />
-        <div id="app-background-image-filter" />
+        <div className="app-background-image relative h-full w-full bg-center bg-no-repeat bg-cover z-[1]" style={getBackgroundStyles()} />
+        <div className="app-background-image-filter h-full w-full left-0 absolute top-0 z-[2]" />
       </div>
       <SearchBar />
       {memoizedSearchResults}

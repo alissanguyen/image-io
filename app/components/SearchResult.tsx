@@ -42,7 +42,7 @@ const SearchResult: React.FC<Props> = (props) => {
     };
   }, []);
 
-  const classes: string = classNames("search-result", { loaded, visible });
+  const classes: string = classNames("search-result overflow-hidden relative opacity-0", { loaded, visible });
 
   const photoUrl: string = `https://unsplash.com/photos/${result.id}?utm_source=CodePen&utm_medium=referral`,
     creatorUrl: string = `${result.creator.link}?utm_source=CodePen&utm_medium=referral`;
@@ -53,15 +53,15 @@ const SearchResult: React.FC<Props> = (props) => {
   return (
     <div className={classes} style={{ gridRowEnd }}>
       <a
-        className="search-result-background"
+        className="search-result-background block h-full w-full opacity-80 bg-center bg-no-repeat bg-cover cursor-pointer"
         href={photoUrl}
         style={{ backgroundColor: result.color, backgroundImage }}
         target="_blank"
       />
-      <div className="search-result-info-wrapper">
-        <div className="search-result-info">
+      <div className="search-result-info-wrapper items-end hidden h-full w-full absolute top-0 left-0 overflow-hidden pointer-events-none z-[2]">
+        <div className="search-result-info flex m-2.5">
           <a
-            className="search-result-creator"
+            className="search-result-creator text-white overflow-hidden text-ellipsis whitespace-nowrap"
             href={creatorUrl}
             target="_blank"
           >
